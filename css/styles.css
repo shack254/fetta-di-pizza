@@ -16,3 +16,12 @@
 .pizzamenu{
   padding: 50px;
 }
+#hide-top{
+  display: none;
+}
+#hide-crust{
+  display: none;
+}
+#hide-menu{
+  display: none;
+}
