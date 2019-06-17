@@ -1,26 +1,54 @@
-function Pizza(size, toppings1,crust){
+function Placeorder(size, crust, topping) {
   this.size = size;
-  this.toppings1 = toppings1;
   this.crust = crust;
- };
- 
- Pizza.prototype.price = function(){
-  var total = this.toppings1 + this.size + this.crust;
-  return total;
- }
- Pizza.prototype.
- function listTopping(prods) {
-  let Pizza.size = [];
-  for (let i=0; i<prods.length; i+=1) {
-   product_names.push(prods[i].name);
+  this.topping = topping;
+  this.price = 0;
+}
+var totalOrderPrice = [];
+
+var pizzaSize = ["small", "medium", "extralarge", "large"];
+var pizzaCrust = ["FlatbreadCrust","ThickCrust","CustomCrusts","ThinCrust","StuffedCrusts"];
+var pizzaTopping = ["Onions", "Extracheese", "Blackolives", "Pineapple"];
+
+
+Placeorder.prototype.costOfPizza = function() {
+  if (this.size === pizzaSize[0]) {
+    this.price += 300;
+  } else if (this.size === pizzaSize[1]) {
+    this.price += 500;
+  } else if (this.size === pizzaSize[2]) {
+    this.price += 900;
+  }else if (this.size === pizzaSize[3]) {
+    this.price += 1200;
   }
-  return product_names;
+  if (this.crust === pizzaCrust[0]) {
+    this.price += 100;
+  } else if (this.crust === pizzaCrust[1]) {
+    this.price += 100;
+  } else if (this.crust === pizzaCrust[2]) {
+    this.price += 400;
+  }else if (this.crust === pizzaCrust[3]) {
+    this.price += 300;
+  }else if (this.crust === pizzaCrust[4]) {
+    this.price += 200;
+  }
+  if (this.topping === pizzaTopping[0]) {
+    this.price += 100;
+  } else if (this.topping === pizzaTopping[1]) {
+    this.price += 200;
+  } else if (this.topping === pizzaTopping[2]) {
+    this.price += 300;
+  } else if (this.topping === pizzaTopping[3]) {
+    this.price += 50;
+  }
+  return this.price;
 }
 
 
 
 
-$(function () {
+
+$(document).ready(function () {
     $(".c").click(function () { 
         $("#show-top").fadeToggle();
         $("#hide-top").fadeToggle();
@@ -34,40 +62,3 @@ $(function () {
         $("#hide-crust").fadeToggle();
     });
 });
-$(document).ready(function() {
-    // Check if element is scrolled into view
-    function isScrolledIntoView(elem) {
-      var docViewTop = $(window).scrollTop();
-      var docViewBottom = docViewTop + $(window).height();
-  
-      var elemTop = $(elem).offset().top;
-      var elemBottom = elemTop + $(elem).height();
-  
-      return ((elemBottom <= docViewBottom) && (elemTop >= docViewTop));
-    }
-    // If element is scrolled into view, fade it in
-    $(window).scroll(function() {
-      $('.scroll-animations .animated').each(function() {
-        if (isScrolledIntoView(this) === true) {
-          $(this).addClass('fadeInLeft');
-        }
-        $(window).trigger(scroll);
-      });
-    });
-  });
-
-   
-   $(document).ready(function(){
-    $("#cost").submit(function(event){
-      event.preventDefault();
-      var size = parseFloat($("#size").val());
-      var toppings1 = parseFloat($("#toppings1").val());
-      var toppings1 = parseFloat($("#toppings1").val());
-      var userPizza = new Pizza(size,toppings1,crust);
-   
-      $("#customerOrder").slideToggle(500);
-      $("ul").append("<li>" + "$" + userPizza.price().toFixed(2) + "</li>");
-      $("li").remove();
-      $("ul").append("<li>" + "$" + userPizza.price().toFixed(2) + "</li>");
-    });
-   });
