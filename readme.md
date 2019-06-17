@@ -19,13 +19,13 @@ In case of any bugs; Fork a repository
 selecting size of pizza         | small or large or medium or extra large             | small or large or medium or extra large 
 selecting topping               |"Onions", "Extracheese", "Blackolives", "Pineapple"  | "Onions", "Extracheese", "Blackolives", 
 selecting crust                 |"FlatbreadCrust","ThickCrust","CustomCrusts"          |"FlatbreadCrust","ThickCrust","
-git clone using this link https://github.com/Juliet-jay/SLICE-PIZZA.git
+git clone using this link 
 Now that you have it in your local repository,open the repository and run the html on the browser.
 ##### technologies used
 Javascript and jquery is used to make the website responsive to a user.The user is able to have the visual interaction with the program.
 Html,css and bootstrap are used to create the front end and style it.
 ## contact me
-Incase of any ideas or corrections,email me at juliekmuthee@gmail.com.
+Incase of any ideas or corrections,email me at 123meshack@gmail.com
 ## license
 The project is licensed under MIT license
 https://opensource.org/licenses/MIT
