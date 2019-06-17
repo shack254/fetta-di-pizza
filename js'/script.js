@@ -52,34 +52,18 @@ Placeorder.prototype.totalCost = function() {
   return shoppingCartTotal;
 }
 
-
-
 $(document).ready(function () {
-    $(".c").click(function () { 
-        $("#show-top").fadeToggle();
-        $("#hide-top").fadeToggle();
-    });
-    $(".b").click(function () { 
-        $("#show-menu").fadeToggle();
-        $("#hide-menu").fadeToggle();
-    });
-    $(".a").click(function () { 
-        $("#show-crust").fadeToggle();
-        $("#hide-crust").fadeToggle();
-    });
-});
-$(document).ready(function () {
-  $("input#cost").submit(function(event) {
+  $("input#cost").click(function(event) {
     event.preventDefault();
-    var sizes = $("input#size").val();
-    var crusts = $("input#crust").val();
-    var toppings = $("input#topping").val();
+    var sizes = $("select#size").val();
+    var crusts = $("select#crust").val();
+    var toppings = $("select#topping").val();
     var newPizzauser = new Placeorder(sizes, crusts,toppings);
     newPizzauser.costOfPizza();
-    totalOrderPrice.push(newPizzaOrder.price);
-    $("ul").append("<li>"+"pizaa" + sizes +"</li>");
-    $("ul").append("<li>"+"pizaa" + crusts +"</li>");
-    $("ul").append("<li>"+"pizaa" + toppings +"</li>");
-    $("ul").text( newPizzaOrder.totalCost());
+    totalOrderPrice.push(newPizzauser.price);
+    $("#type").text("pizza :"+ sizes);
+    $("#typ").text("crusts  :"+ crusts );
+    $("#ty").text("topping  :"+ toppings);
+    $("#t").text( "total cost  :"+newPizzauser.totalCost());
   });
 });

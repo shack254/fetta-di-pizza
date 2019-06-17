@@ -62,50 +62,55 @@
     </div>
     <div class="container">
         <div class="pizzamenu">
+            <form >
             <div class="row">
                 <div class="col-4  ">
-
-                    <img src="img/photo-1507927923899-e31ac1b6ff62.jpeg" class="img-fluid card-img" alt="">
+                  2.0  <img src="img/photo-1507927923899-e31ac1b6ff62.jpeg" class="img-fluid card-img" alt="">
                     <h2>toppings</h2>
-
                     <div class="card-body">
-                        <select>
-                            <option>Volvo</option>
-                            <option>Saab</option>
-                            <option>Mercedes</option>
-                            <option>Audi</option>
+                        <select id="topping">
+                            <option value="Onions">Onions</option>
+                            <option value="Extracheese">Extra cheese</option>
+                            <option value="Blackolives">Black olives</option>
+                            <option value="Pineapple">Pineapple</option>
                         </select>
                     </div>
                 </div>
                 <div class="col-4 ">
-
                     <img src="img/dice_cube_toss_137653_320x240.jpg" class="img-fluid card-img" alt="">
                     <h2>menu</h2>
-
                     <div class="card-body">
-                        <select>
-                            <option>Volvo</option>
-                            <option>Saab</option>
-                            <option>Mercedes</option>
-                            <option>Audi</option>
+                        <select id="size">
+                            <option value="small">small ksh 300</option>
+                            <option value="medium">medium ksh 500</option>
+                            <option value="large">large ksh 900</option>
+                            <option value="extralarge">extra large ksh 1200</option>
                         </select>
                     </div>
                 </div>
                 <div class="col-4  ">
-
                     <img src="img/cropped-1920-1080-812234.jpg" class="img-fluid card-img" alt="">
                     <h2>crust</h2>
-
                     <div class="card-body">
-                        <select>
-                            <option>Volvo</option>
-                            <option>Saab</option>
-                            <option>Mercedes</option>
-                            <option>Audi</option>
+                        <select id="crust">
+                            <option value="ThickCrust">Thick Crust</option>
+                            <option value="CustomCrust">Custom Crusts</option>
+                            <option value="ThinCrust">Thin Crust</option>
+                            <option value="StuffedCrust">Stuffed Crusts</option>
+                            <option value="FlatbreadCrust">Flatbread Crust</option>
                         </select>
                     </div>
                 </div>
             </div>
+            <input type="submit" value="send" id="cost">
+            </form>
+        </div>
+        
+        <div class="display text-dark">
+            <p id="type">pizza :</p>
+            <p id="typ">Crust :</p>
+            <p id="ty">topping :</p>
+            <p id="t">total cost :</p>
         </div>
     </div>
 </body>
