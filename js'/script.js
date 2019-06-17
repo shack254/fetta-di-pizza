@@ -44,7 +44,13 @@ Placeorder.prototype.costOfPizza = function() {
   return this.price;
 }
 
-
+Placeorder.prototype.totalCost = function() {
+  var shoppingCartTotal = 0;
+  for (var order = 0; order < totalOrderPrice.length; order++) {
+    shoppingCartTotal += totalOrderPrice[order];
+  }
+  return shoppingCartTotal;
+}
 
 
 
@@ -61,4 +67,19 @@ $(document).ready(function () {
         $("#show-crust").fadeToggle();
         $("#hide-crust").fadeToggle();
     });
+});
+$(document).ready(function () {
+  $("input#cost").submit(function(event) {
+    event.preventDefault();
+    var sizes = $("input#size").val();
+    var crusts = $("input#crust").val();
+    var toppings = $("input#topping").val();
+    var newPizzauser = new Placeorder(sizes, crusts,toppings);
+    newPizzauser.costOfPizza();
+    totalOrderPrice.push(newPizzaOrder.price);
+    $("ul").append("<li>"+"pizaa" + sizes +"</li>");
+    $("ul").append("<li>"+"pizaa" + crusts +"</li>");
+    $("ul").append("<li>"+"pizaa" + toppings +"</li>");
+    $("ul").text( newPizzaOrder.totalCost());
+  });
 });
