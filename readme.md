@@ -1,4 +1,4 @@
-# SLICE PIZZA
+# fetta-di-pizza
 Slice pizza is an online food website that helps the user to shop pizza online,displays different sizes, of pizza,flavore,different types of toppings with different prices that suits the customer needs,it adds the prices and alerts you the amout you have to pay plus gives you an option of pick up or delivery.
 
 ## project by meshack kibunja
