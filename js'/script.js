@@ -1,12 +1,11 @@
-function Pizza(size, toppings1,toppings2,toppings3){
+function Pizza(size, toppings1,crust){
   this.size = size;
   this.toppings1 = toppings1;
-  this.toppings2 = toppings2;
-  this.toppings3 = toppings3;
+  this.crust = crust;
  };
  
  Pizza.prototype.price = function(){
-  var total = this.toppings1 + this.toppings2 + this.toppings3  + this.size;
+  var total = this.toppings1 + this.size + this.crust;
   return total;
  }
 
@@ -25,15 +24,6 @@ $(function () {
     $(".a").click(function () { 
         $("#show-crust").fadeToggle();
         $("#hide-crust").fadeToggle();
-    });
-});
-
-$(function () {
-    $("#sizes").click(function (e) { 
-        e.preventDefault();
-        var sizes = $("").val();
-        var pizza = new pizza()
-        
     });
 });
 $(document).ready(function() {
@@ -60,13 +50,10 @@ $(document).ready(function() {
 
    
    $(document).ready(function(){
-    $("#pizzaOrder").submit(function(event){
+    $("#cost").submit(function(event){
       event.preventDefault();
       var size = parseFloat($("#size").val());
       var toppings1 = parseFloat($("#toppings1").val());
-      var toppings2 = parseFloat($("#toppings2").val());
-      var toppings3 = parseFloat($("#toppings3").val());
-   
       var userPizza = new Pizza(size,toppings1,toppings2,toppings3);
    
       $("#customerOrder").slideToggle(500);
