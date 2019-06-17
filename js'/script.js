@@ -8,6 +8,14 @@ function Pizza(size, toppings1,crust){
   var total = this.toppings1 + this.size + this.crust;
   return total;
  }
+ Pizza.prototype.
+ function listTopping(prods) {
+  let Pizza.size = [];
+  for (let i=0; i<prods.length; i+=1) {
+   product_names.push(prods[i].name);
+  }
+  return product_names;
+}
 
 
 
@@ -54,7 +62,8 @@ $(document).ready(function() {
       event.preventDefault();
       var size = parseFloat($("#size").val());
       var toppings1 = parseFloat($("#toppings1").val());
-      var userPizza = new Pizza(size,toppings1,toppings2,toppings3);
+      var toppings1 = parseFloat($("#toppings1").val());
+      var userPizza = new Pizza(size,toppings1,crust);
    
       $("#customerOrder").slideToggle(500);
       $("ul").append("<li>" + "$" + userPizza.price().toFixed(2) + "</li>");
